@@ -3,6 +3,8 @@ extends Node
 # warning-ignore:unused_class_variable
 var spawnpoint = ""
 var current_level = ""
+var wizard_cypher_solved = false
+var rat_king_solved = false
 
 func _ready():
 	VisualServer.set_default_clear_color(ColorN("white"))

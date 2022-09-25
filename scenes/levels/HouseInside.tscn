@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://textures/house_inside.png" type="Texture" id=1]
 [ext_resource path="res://fonts/plex_mono_16.tres" type="DynamicFont" id=2]
@@ -12,14 +12,16 @@
 [ext_resource path="res://textures/scroll.png" type="Texture" id=10]
 [ext_resource path="res://textures/sealed_cypher.png" type="Texture" id=11]
 [ext_resource path="res://scenes/levels/CypherCode.gd" type="Script" id=12]
-[ext_resource path="res://scenes/levels/LineEdit.gd" type="Script" id=13]
+[ext_resource path="res://scenes/levels/LineEdit2.gd" type="Script" id=13]
 [ext_resource path="res://textures/swirly.png" type="Texture" id=14]
+[ext_resource path="res://textures/wizardcat.png" type="Texture" id=15]
+[ext_resource path="res://textures/you_win.png" type="Texture" id=16]
 
 [sub_resource type="GDScript" id=4]
 script/source = "extends Node
 
 func process() -> void:
-		print(\"houseinside \" + get_node(\"TextEdit\").text)
+		print(\"houseinside \" + get_node(\"HouseInside/TextEdit\").text)
 "
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -61,9 +63,16 @@ What it is composed of, only you can seek.
 
 Bring back the right concoction, and I shall grant you your wish.", "Trouble leaving? You must decode the cypher!", "How do you expect to make it in the big city if you don't use your brain?" ]
 
+[node name="sprite" parent="house_inside/Wizard" index="0"]
+texture = ExtResource( 15 )
+
 [node name="trigger" parent="house_inside/Wizard" index="2"]
 position = Vector2( -4.31702, 233.447 )
 shape = SubResource( 1 )
+
+[node name="Success" type="Sprite" parent="house_inside/Wizard"]
+visible = false
+texture = ExtResource( 16 )
 
 [node name="table" parent="house_inside" instance=ExtResource( 3 )]
 position = Vector2( 8.49194, 72.6704 )

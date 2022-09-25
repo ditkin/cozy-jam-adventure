@@ -6,7 +6,7 @@ extends LineEdit
 # var b = "text"
 
 
-var answer = "apple"
+var answer = "dreams lie in a slice of sweetness and warmth"
 
 
 
@@ -19,12 +19,11 @@ func _ready():
 func _process(delta):
 	if self.text == answer:
 		$Swirly.show()
-		Globals.rat_king_solved = true
+		Globals.wizard_cypher_solved = true
 		yield(get_tree().create_timer(1.0), "timeout")
 		
 		Globals.spawnpoint = "house_outside"
-		get_tree().change_scene("res://scenes/levels/HouseInside.tscn")
-		emit_signal("dialog_ended")
+		get_tree().change_scene("res://scenes/levels/GoldenGate.tscn")
 	pass
 	
 
